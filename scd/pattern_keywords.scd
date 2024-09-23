@@ -1,0 +1,93 @@
+//Lista de palabras reservadas a evitar al momento de armar SynthDefs para utilizar con Patterns
+(
+((
+	((
+		((
+			Event.partialEvents.collect(_.keys(Array)).asArray.flat
+		)
+		++
+		(
+			Event.parentEvents.collect(_.keys(Array)).asArray.flat
+		))
+		as: IdentitySet
+	))
+	as: SortedList
+))
+.printAll
+)
+/**********************************************/
+addAction
+after
+amp
+args
+asEventStreamPlayer
+before
+bufnum
+bufpos
+ctranspose
+db
+defaultMsgFunc
+degree
+delta
+detune
+detunedFreq
+dur
+eventTypes
+filename
+frame
+freeServerNode
+freq
+freqToNote
+freqToScale
+genarray
+gencmd
+genflags
+getBundleArgs
+getMsgFunc
+group
+gtranspose
+harmonic
+hasGate
+headOf
+instrument
+isPlaying
+isPlaying_
+lag
+latency
+leaveOpen
+legato
+map
+midiEventFunctions
+midicmd
+midinote
+mtranspose
+nodeID
+note
+numchannels
+numframes
+octave
+octaveRatio
+out
+pan
+parentTypes
+pauseServerNode
+play
+releaseServerNode
+resumeServerNode
+root
+scale
+schedBundle
+schedBundleArray
+schedStrummedNote
+stepsPerOctave
+stopServerNode
+stretch
+strum
+strumEndsTogether
+sustain
+synthDefName
+tailOf
+timingOffset
+trig
+type
+velocity
