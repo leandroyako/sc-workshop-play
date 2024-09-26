@@ -52,6 +52,7 @@ foo;
 //7. Encadenamiento de operaciones:
 
 3.cubed + 100 / 2;
+5.5.trunc.squared;
 
 
 //8. Comentarios:

@@ -42,7 +42,7 @@ Buffer.read(s, "/ruta/archivo.wav", startFrame, numFrames);
 //5. Para cargar múltiples archivos de sonido:
 
 ~bells = Array.new;
-~folder = PathName.new("/home/yako/Documentos/supercollider-code/SuperCollider-Tutorials/tutorial15-16-17_buffers/buffers/deskBells");
+~folder = PathName.new("buffers/deskBells");
 (
 ~folder.entries.do({
     arg path;
@@ -102,8 +102,7 @@ SynthDef.new(\bufrd_test, {
 }).add;
 )
 
-x = Synth.new(\bufrd_loop, [\buf, ~apollo11.bufnum, \start, 0, \end, ~apollo11.numFrames-1, \freq, 0.2]);
-x.free;
+x = Synth.new(\bufrd_test, [\buf, ~apollo11.bufnum, \start, 0, \end, ~apollo11.numFrames-1, \freq, 0.2]);
 
 //8. Uso de diferentes UGens como punteros para BufRd:
 
@@ -165,7 +164,7 @@ x = Synth.new(\bufrd_noise, [\buf, ~bells[4].bufnum, \start, 0, \end, ~bells[4].
 
 y = Synth.new(\bufrd_noise, [\buf, ~bells[7].bufnum, \start, 0, \end, ~bells[7].numFrames-1, \freq, 0.7, \amp, 0.5]);
 
-z = Synth.new(\bufrd_noise, [\buf, ~bells[12].bufnum, \start, 0, \end, ~bells[12].numFrames-1, \freq, 0.5, \amp, 0.2]);
+z = Synth.new(\bufrd_noise, [\buf, ~bells[6].bufnum, \start, 0, \end, ~bells[6].numFrames-1, \freq, 0.5, \amp, 0.2]);
 
 s.freeAll;
 
@@ -179,7 +178,7 @@ x = Synth.new(\bufrd_noise, [\buf, ~bells[3].bufnum, \start, 0, \end, ~bells[3].
 
 y = Synth.new(\bufrd_noise, [\buf, ~bells[5].bufnum, \start, 0, \end, ~bells[5].numFrames-1, \freq, 2.7, \amp, 0.5], g);
 
-z = Synth.new(\bufrd_noise, [\buf, ~bells[7].bufnum, \start, 0, \end, ~bells[7].numFrames-1, \freq, 3.3, \amp, 0.2], g);
+z = Synth.new(\bufrd_noise, [\buf, ~bells[4].bufnum, \start, 0, \end, ~bells[4].numFrames-1, \freq, 3.3, \amp, 0.2], g);
 
 g.set(\freq, 16);
 g.set(\freq, 60);

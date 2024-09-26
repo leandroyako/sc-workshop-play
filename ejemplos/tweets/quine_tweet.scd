@@ -1,0 +1,1 @@
+interpret(x="/******/play{RLPF.ar(COsc.ar(b=Buffer.loadCollection(s,x.ascii.normalize(-1,1)),Osc.kr(b,1,0,65,35)),Osc.kr(b,0.1,0,300,1e3))/5}")

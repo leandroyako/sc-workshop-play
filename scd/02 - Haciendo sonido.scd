@@ -26,7 +26,7 @@
 
 /*
 5. Generadores de Unidad (UGens):
-   - ar: Tasa de audio (44100 muestras por segundo)
+   - ar: Tasa de audio (44100/48000 muestras por segundo)
    - kr: Tasa de control (64 muestras por segundo por defecto)
    - ir: Tasa de inicialización (un solo valor)
 
@@ -41,14 +41,16 @@
    {SinOsc.ar(SinOsc.kr(2, 0, 220, 440))}.play;
 
 //8. Uso de variables para estructurar el código:
-
+(
    {
      var modulator, sound;
      modulator = SinOsc.kr(2, 0, 220, 440);
      sound = SinOsc.ar(modulator);
      sound
    }.play;
-
+)
 //9. Herramientas útiles:
    s.scope//: Abre un osciloscopio para visualizar señales
-   //Documentación de ayuda: "Tour of UGens" para ver todos los UGens disponibles
+
+
+//Documentación de ayuda: "Tour of UGens" para ver todos los UGens disponibles

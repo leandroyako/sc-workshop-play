@@ -16,12 +16,16 @@ En lo posible traer parlante (con cable miniplug) o auriculares. Si prefieren tr
 [Live Coding with SCTweets and hand gestures](https://www.youtube.com/watch?v=B0zgNv8c8GI)
  [Teaser: SuperCollider + Eurorack + tablas in Shanghai, 2024-07-25](https://www.youtube.com/watch?v=FvZqfO10FA4)
  [Solstice Night Stream December 2022](https://www.youtube.com/watch?v=977AbvG2s04)
+ [Signes - Playmodes](https://www.playmodes.com/home/signes/)
+ [Singularity - Roosna & Flak](https://roosnaflak.com/performances/singularity/)
 
 ##### 2. Configuración del entorno
 - Instalación de SuperCollider
 		https://supercollider.github.io/downloads
 - Familiarización con la interfaz
 	 ![[01 - Navegando el entorno.scd]]
+	Ejercicios:
+	
 ##### 3. Conceptos básicos
 - Sintaxis del lenguaje
 - Servidor de audio y cliente
@@ -74,6 +78,7 @@ En lo posible traer parlante (con cable miniplug) o auriculares. Si prefieren tr
 - Comunidad y foros de SuperCollider
 	- https://scsynth.org
 	- [Discord](https://discord.gg/PVUmDyx7p8)
+	- https://sccode.org/
 - Revisión de los conceptos clave del taller
 - Sesión de preguntas y respuestas
 - Conclusión y siguientes pasos para continuar aprendiendo
