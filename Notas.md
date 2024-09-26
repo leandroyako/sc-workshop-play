@@ -1,5 +1,14 @@
 
-1-Producción visual? Sonora?
+1-Producción visual? Sonora? Lectura musical?
 2-Audio digital? amplitud, frecuencia, forma de onda, frecuencia de muestreo, teorema de Nyquist, espectro, etc?
 3-Lenguaje de programación? gráfico/textual?
 4-Experiencia previa con SuperCollider?
+
+
+Ejercicios:
+
+Detectar errores en funciones
+Escribir funciones que suenen
+Escribir SynthDefs
+Escribir SynthDefs con buffers
+Escribir Patterns

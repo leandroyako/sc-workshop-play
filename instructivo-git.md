@@ -68,15 +68,3 @@ git push origin <nombre-de-tu-rama>
 
 1. Los mantenedores del repositorio original revisarán tu Pull Request.
 2. Una vez aprobado, fusionarán tus cambios en el repositorio principal.
-
-## Configuración para Varios Usuarios
-
-Para permitir que varios usuarios suban archivos, cada uno debe seguir los mismos pasos descritos anteriormente:
-
-1. Hacer fork del repositorio.
-2. Clonar su propio fork.
-3. Crear una nueva rama para sus cambios.
-4. Hacer commit y push de sus cambios a su fork.
-5. Crear un Pull Request desde su fork al repositorio original.
-
-Cada colaborador debe tener permisos de colaboración adecuados en el repositorio original para poder hacer push directamente o realizar pull requests.

@@ -24,10 +24,16 @@ En lo posible traer parlante (con cable miniplug) o auriculares. Si prefieren tr
 		https://supercollider.github.io/downloads
 - Familiarización con la interfaz
 	 ![[01 - Navegando el entorno.scd]]
-	Ejercicios:
-	
 ##### 3. Conceptos básicos
 - Sintaxis del lenguaje
+	Ejercicios:
+	![[ejercicios_0.scd]]
+	
+	![[ejercicios_1.scd]]
+	
+	![[ejercicios_2.scd]]
+	
+	![[ejercicios_3.scd]]
 - Servidor de audio y cliente
 	 ![[02 - Haciendo sonido.scd]]
 

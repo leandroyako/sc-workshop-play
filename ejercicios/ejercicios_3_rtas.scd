@@ -1,9 +1,4 @@
-//Conjunto de Problemas Semana 3
-//Fecha límite 3pm CDT 17 de septiembre
-
-//Primero, guarda este archivo scd como un nuevo archivo, renombrándolo con tu apellido al principio del nombre del archivo (por ejemplo, "Apellido Conjunto de Problemas Semana 3.scd"), y sube este archivo renombrado al sitio del curso para tu entrega.
-
-//Mientras completes esta tarea, sé consciente de la ***seguridad auditiva***. Antes de ejecutar código que produzca sonido, baja el volumen del sistema casi o completamente al mínimo, quítate los auriculares y monitorea el nivel visual en los medidores de salida (evalúa s.meter). Luego, sube lentamente el volumen del sistema.
+//Mientras completes esta tarea, sé consciente de la seguridad auditiva. Antes de ejecutar código que produzca sonido, baja el volumen del sistema al mínimo, quítate los auriculares y monitorea el nivel visual en los medidores de salida (evalúa s.meter). Luego, sube lentamente el volumen del sistema.
 
 
 //Problema 1
