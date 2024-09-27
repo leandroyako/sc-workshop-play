@@ -25,7 +25,8 @@
 
 //3. Almacenamiento de resultados:
 
-(   x = Array.newClear(5);
+(
+x = Array.newClear(5);
 [6, 4, 0.5, 10, 7].do{
 	arg item, count;
 	x[count] = item.squared;
@@ -34,7 +35,8 @@
 
 //4. Uso del método `collect`:
 
-(   z = [6, 4, 0.5, 10, 7].collect{
+(
+z = [6, 4, 0.5, 10, 7].collect{
 	arg item;
 	item.squared;
 };
@@ -154,14 +156,14 @@ x.free;
 //Problemas...
 (
 SynthDef.new(\iter2, {
-	arg freq=200, dev=1.02, num=10;
+	arg freq=200, dev=1.02, num=10; //num como argumento genera un Control
 	var temp, sum;
 	sum = 0;
 	/*
-	num.class.postln;
-	num.source.class.postln;
+	num.class.postln; ?
+	num.source.class.postln; ?
 	*/
-	num.do{
+	num.do{ //no itera
 		arg count;
 		temp = SinOsc.ar(
 			freq *

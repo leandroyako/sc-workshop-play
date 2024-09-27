@@ -40,9 +40,8 @@ Buffer.read(s, "/ruta/archivo.wav", startFrame, numFrames);
 ~b0_part = Buffer.read(s, "/ruta/archivo.wav", 0, s.sampleRate/2);
 
 //5. Para cargar múltiples archivos de sonido:
-
 ~bells = Array.new;
-~folder = PathName.new("buffers/deskBells");
+~folder = PathName.new("/media/wd1tb/supercollider-code/supercollider-taller/scd/buffers/deskBells");
 (
 ~folder.entries.do({
     arg path;
