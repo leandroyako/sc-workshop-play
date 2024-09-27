@@ -3,7 +3,7 @@ Para permitir que varios usuarios puedan contribuir a un repositorio en GitHub, 
 ## 1. Hacer Fork del Repositorio
 
 1. Inicia sesión en tu cuenta de GitHub.
-2. Ve al repositorio original en GitHub: [sc-workshop-play](https://github.com/leandroyako/sc-workshop-play).
+2. Ve al repositorio original en GitHub: [sc-workshop-play](https://github.com/leandroyako/sc-workshop-play-tp).
 3. Haz clic en el botón **Fork** en la esquina superior derecha. Esto creará una copia del repositorio en tu cuenta de GitHub.
 
 ## 2. Clonar el Repositorio Forkeado
@@ -23,7 +23,7 @@ Sustituye `<URL_DE_TU_REPOSITORIO_FORK>` con la URL que copiaste en el paso ante
 1. Navega al directorio del repositorio clonado:
 
 ```bash
-cd sc-workshop-play
+cd sc-workshop-play-tp
 ```
 
 2. Crea una nueva rama para tus cambios:
