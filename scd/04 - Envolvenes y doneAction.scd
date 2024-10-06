@@ -1,6 +1,6 @@
 /*
 1. EnvGen y Env:
-- EnvGen es una herramienta para generación de envolventes más sofisticada que Line y XLine
+- EnvGen es una herramienta para generación de envolventes
 - Permite el uso de envolventes con puntos de quiebre (Env)
 - Incluye un argumento de puerta (gate) para mantener y reactivar envolventes
 
@@ -43,9 +43,8 @@ x = {
 */
 (
 SynthDef.new(\sineEnv, {
-	arg dur=2;
 	var env, sig;
-	env = EnvGen.ar(Env.new([0, 1, 0], [0.01, 1], \exp), doneAction: 2);
+	env = EnvGen.ar(Env.new([0, 1, 0], [0.01, 1]), doneAction: 2);
 	sig = SinOsc.ar(440) * env;
 	Out.ar(0, sig);
 }).add;
@@ -55,9 +54,8 @@ x = Synth.new(\sineEnv);
 //   - Ataque lento y caída rápida:
 (
 	SynthDef.new(\sineEnv, {
-		arg dur=2;
 		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0], [1, 0.01], \exp), doneAction: 2);
+		env = EnvGen.ar(Env.new([0, 1, 0], [1, 0.01]), doneAction: 2);
 		sig = SinOsc.ar(440) * env;
 		Out.ar(0, sig);
 	}).add;
@@ -67,9 +65,8 @@ x = Synth.new(\sineEnv);
 //   - Ciclo de ataque y liberación:
 (
 	SynthDef.new(\sineEnv, {
-		arg dur=2;
 		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0.5, 0], [0.01, 0.5, 0.5], \exp), doneAction: 2);
+		env = EnvGen.ar(Env.new([0, 1, 0.5, 0], [0.01, 0.5, 0.5]), doneAction: 2);
 		sig = SinOsc.ar(440) * env;
 		Out.ar(0, sig);
 	}).add;
@@ -81,7 +78,7 @@ x = Synth.new(\sineEnv);
 	SynthDef.new(\sineEnv, {
 		arg dur=2, gate=1;
 		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0], [0.01, 1], \exp), gate: gate, doneAction: 2);
+		env = EnvGen.ar(Env.new([0, 1, 0], [0.01, 1]), gate: gate, doneAction: 2);
 		sig = SinOsc.ar(440) * env;
 		Out.ar(0, sig);
 	}).add;

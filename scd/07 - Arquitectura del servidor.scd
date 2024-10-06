@@ -101,7 +101,19 @@ SynthDef.new(\blip, {
 	sig = Pan2.ar(sig, LFNoise1.kr(10));
 	Out.ar(out, sig);
 }).add;
+
+SynthDef.new(\reverb, {
+	arg in, out=0;
+	var sig;
+	sig = In.ar(in, 2);
+	sig = FreeVerb.ar(sig, 0.5, 0.8, 0.2);
+	Out.ar(out, sig);
+}).add;
 )
+
+~sourceGrp = Group.new;
+~fxGrp = Group.after(~sourceGrp);
+y = Synth.new(\reverb, [\in, ~reverbBus2], ~fxGrp);
 
 (
 8.do{
