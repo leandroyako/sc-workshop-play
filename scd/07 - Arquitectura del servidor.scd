@@ -40,7 +40,7 @@ SynthDef.new(\blip, {
 SynthDef.new(\reverb, {
 	arg in, out=0;
 	var sig;
-	sig = In.ar(in, 1);
+	sig = In.ar(in, numChannels: 1);
 	sig = FreeVerb.ar(sig, 0.5, 0.8, 0.2)!2;
 	Out.ar(out, sig);
 }).add;
@@ -60,14 +60,14 @@ SynthDef.new(\blip, {
 	sig = SinOsc.ar(freq) * 0.25;
 	trig = Dust.kr(2);
 	sig = sig * EnvGen.kr(Env.perc(0.01, 0.2), trig);
-	sig = Pan2.ar(sig, LFNoise1.kr(10));
+	sig = Pan2.ar(sig, LFNoise1.kr(10)); //stereo
 	Out.ar(out, sig);
 }).add;
 
 SynthDef.new(\reverb, {
 	arg in, out=0;
 	var sig;
-	sig = In.ar(in, 2);
+	sig = In.ar(in, numChannels: 2);
 	sig = FreeVerb.ar(sig, 0.5, 0.8, 0.2);
 	Out.ar(out, sig);
 }).add;
@@ -80,14 +80,19 @@ x = Synth.new(\blip, [\out, ~reverbBus2]);
 //5. Orden de Ejecución
 
 x = Synth.new(\blip, [\out, ~reverbBus2], s);
-y = Synth.new(\reverb, [\in, ~reverbBus2], s, \addToTail);
+y = Synth.new(\reverb, [\in, ~reverbBus2], s); // No suena porque este nodo quedó primero en el servidor
+s.plotTree; // Procesa reverb antes de que llegue el resultado de blip
+
+//Ctrl + . antes de ejecutar
+x = Synth.new(\blip, [\out, ~reverbBus2], s);
+y = Synth.new(\reverb, [\in, ~reverbBus2], s, \addToTail); //\addToTail envia el nodo al final en el servidor
 
 //6. Uso de Grupos para Gestionar el Orden de Nodos
 
 ~sourceGrp = Group.new;
 ~fxGrp = Group.after(~sourceGrp);
 x = Synth.new(\blip, [\out, ~reverbBus2], ~sourceGrp);
-y = Synth.new(\reverb, [\in, ~reverbBus2], ~fxGrp);
+y = Synth.new(\reverb, [\in, ~reverbBus2], ~fxGrp); //No necesito \addToTail porque ~fxGrp está después de ~sourceGrp
 
 //7. Iteración sobre Múltiples Synths
 (
