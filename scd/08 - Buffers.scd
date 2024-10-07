@@ -168,6 +168,7 @@ z = Synth.new(\bufrd_noise, [\buf, ~bells[6].bufnum, \start, 0, \end, ~bells[6].
 s.freeAll;
 
 
+//Manejando un grupo de capas
 
 g = Group.new;
 
@@ -177,11 +178,11 @@ x = Synth.new(\bufrd_noise, [\buf, ~bells[3].bufnum, \start, 0, \end, ~bells[3].
 
 y = Synth.new(\bufrd_noise, [\buf, ~bells[5].bufnum, \start, 0, \end, ~bells[5].numFrames-1, \freq, 2.7, \amp, 0.5], g);
 
-z = Synth.new(\bufrd_noise, [\buf, ~bells[4].bufnum, \start, 0, \end, ~bells[4].numFrames-1, \freq, 3.3, \amp, 0.2], g);
+z = Synth.new(\bufrd_noise, [\buf, ~bells[4].bufnum, \start, 0, \end, ~bells[4].numFrames-1, \freq, 3.3, \amp, 0.5], g);
 
 g.set(\freq, 16);
 g.set(\freq, 60);
 g.set(\freq, 200);
 g.set(\freq, 0.16);
-
+g.set(\amp, 0.9);
 s.freeAll;
