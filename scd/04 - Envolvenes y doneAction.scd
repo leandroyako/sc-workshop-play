@@ -37,6 +37,8 @@ x = {
 	sig = Pulse.ar(LFPulse.kr(8).range(600,900)) * env;
 }.play
 )
+
+x.set(\t_gate, 1);
 /*
 8. Ejemplos de SynthDef con EnvGen:
 - Ataque rápido y caída lenta:
@@ -53,35 +55,44 @@ x = Synth.new(\sineEnv);
 
 //   - Ataque lento y caída rápida:
 (
-	SynthDef.new(\sineEnv, {
-		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0], [1, 0.01]), doneAction: 2);
-		sig = SinOsc.ar(440) * env;
-		Out.ar(0, sig);
-	}).add;
+SynthDef.new(\sineEnv, {
+	var env, sig;
+	env = EnvGen.ar(Env.new([0, 1, 0], [1, 0.01]), doneAction: 2);
+	sig = SinOsc.ar(440) * env;
+	Out.ar(0, sig);
+}).add;
 )
 x = Synth.new(\sineEnv);
 
 //   - Ciclo de ataque y liberación:
 (
-	SynthDef.new(\sineEnv, {
-		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0.5, 0], [0.01, 0.5, 0.5]), doneAction: 2);
-		sig = SinOsc.ar(440) * env;
-		Out.ar(0, sig);
-	}).add;
+SynthDef.new(\sineEnv, {
+	var env, sig;
+	env = EnvGen.ar(Env.new([0, 1, 0.5, 0], [0.01, 0.5, 0.5]), doneAction: 2);
+	sig = SinOsc.ar(440) * env;
+	Out.ar(0, sig);
+}).add;
 )
 x = Synth.new(\sineEnv);
 
 //9. Uso del argumento gate para control de tiempo:
 (
-	SynthDef.new(\sineEnv, {
-		arg dur=2, gate=1;
-		var env, sig;
-		env = EnvGen.ar(Env.new([0, 1, 0], [0.01, 1]), gate: gate, doneAction: 2);
-		sig = SinOsc.ar(440) * env;
-		Out.ar(0, sig);
-	}).add;
+SynthDef.new(\sineEnv, {
+	arg gate=1;
+	var env, sig;
+
+	env = EnvGen.ar(
+		Env.new(
+			[0, 1, 0.5, 0],
+			[0.01, 0.1, 1],
+			releaseNode: 2),
+		gate: gate, doneAction: 2);
+
+	sig = SinOsc.ar(440) * env;
+
+	Out.ar(0, sig);
+}).add;
 )
+
 x = Synth.new(\sineEnv);
 x.set(\gate, 0);  // Termina el Synth
